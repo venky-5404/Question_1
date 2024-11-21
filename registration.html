@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Event Registration</title>
+</head>
+<body>
+    <h1>Event Registration</h1>
+<div>
+    <p>Full Name: <input type="text" id="fullName"></p>
+    <p>Email: <input type="email" id="email"></p>
+    <p>Event:
+        <select id="event" required>
+            <option value="" disabled selected>Select</option>
+            <option value="Tech Talk">Tech Talk</option>
+            <option value="Workshop">Workshop</option>
+        </select>
+    </p>
+    <button id="registerButton">Register</button>
+</div>
+
+<script>
+    document.getElementById("registerButton").addEventListener("click", function() {
+        const name = document.getElementById("fullName").value;
+        const email = document.getElementById("email").value;
+        const event = document.getElementById("event").value;
+
+        if (!name || !email || !event) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        alert(`Thank you, ${name}! Registered for ${event}.`);
+    });
+</script>
+</body>
+</html>
